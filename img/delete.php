@@ -24,7 +24,7 @@ if ( empty ( $deleteArray ) )
 /*
  * 이미지 삭제 API : image delete
  */
-$re = $Image ->  ImageDelete ( json_encode ( $deleteArray ) ) ;
+$re = $Image ->  imageDelete ( json_encode ( $deleteArray ) ) ;
 if ( $re )
 	if ( isset ( $re -> Error ) )
 		echo $re -> RequestID . ' : ' . $re -> Message ;

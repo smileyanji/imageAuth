@@ -2,7 +2,7 @@
 include_once '../inc/config.inc' ;
 $title = 'Encoding images' ;
 include_once INC . '/header.inc' ;
-$file = $Image -> ImageList ( $_GET['ruleKey'] ) ;
+$file = $Image -> imageList ( $_GET['ruleKey'] ) ;
 $files = $file['images'] ;
 ?>
 <p class="div_head"><a href="./rule.php?storageKey=<?=$storageKey?>"> - Back - </a></p>

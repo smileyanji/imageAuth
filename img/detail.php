@@ -2,7 +2,7 @@
 include_once '../inc/config.inc' ;
 $title = 'Image detail' ;
 include_once INC . '/header.inc' ;
-$file = $Image -> ImageDetail ( $_GET['image_key'] ) ;
+$file = $Image -> imageDetail ( $_GET['image_key'] ) ;
 if ( isset ( $_GET['folderKey'] ) )
 	$url = "./home.php?storageKey={$_GET['storageKey']}&folderKey={$_GET['folderKey']}" ;
 else

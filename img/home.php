@@ -10,7 +10,7 @@ if ( $_GET['folderKey'] )
 else
 	$key = $storageKey ;
 $result = $Image -> folderSelect ( $key ) ;
-$file = $Image -> ImageList ( $key ) ;
+$file = $Image -> imageList ( $key ) ;
 $folder = $result['Folders'] ;
 $files = $file['images'] ;
 ?>

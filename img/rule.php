@@ -2,7 +2,7 @@
 include_once '../inc/config.inc' ;
 $title = 'Encoding rule' ;
 include_once INC . '/header.inc' ;
-$Rule = $Image -> Rule ( $storageKey ) ;
+$Rule = $Image -> ruleSelect ( $storageKey ) ;
 $Rules = $Rule['rules'] ;
 ?>
 <div class="div_head"><h2>Encoding rule</h2></div>
