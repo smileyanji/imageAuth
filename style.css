@@ -1,0 +1,7 @@
+body{padding:2%;background-color:#fffcf8}
+table {width:98%;margin: 0 auto;	text-align: center;border-collapse: collapse; border: 1px solid #ececec;}
+table th{border-bottom:1px solid #a0a0a0;background-color: #e4e4e4;padding:8px;}
+table td{border: 1px solid #ececec;padding:2px 0;}
+.text-break {word-break: break-all;}
+.tb-detail{width: 28%;margin-top: 20px;border-collapse: collapse;border: 0px solid #a0a0a0;float: left;}
+.tb-detail td{text-align:left;padding:8px;}
