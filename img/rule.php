@@ -19,7 +19,7 @@ $Rules = $Rule['rules'] ;
 				<th width="4%">Width</th>
 				<th width="4%">Height</th>
 				<th width="4%">Crop</th>
-				<th width="5%">BbColor</th>
+				<th width="5%">Bg Color</th>
 				<th width="3%">Upsize</th>
 				<th width="26%">Watermark</th>
 				<th width="5%">Filter</th>
@@ -48,7 +48,7 @@ $Rules = $Rule['rules'] ;
 					<td><?=$k['r_bg'] ? '#' . $k['r_bg'] : '-' ?></td>
 					<td><?=$k['r_upsize']? $k['r_upsize'] : '-' ?></td>
 					<td class='text-break'><?=$k['wm_path']?$k['wm_path'] . '(align:'.$k['wm_align'].';x:'.$k['wm_x'].';y:'.$k['wm_y'].')' : '-' ?></td>
-					<td><?=$k['f_type'] ? $k['f_type'].'('.$k['f_val'].')': '-' ?></td>
+					<td><?=$k['f_type'] ? ( $k['f_type'] == 'greyscale' ? $k['f_type'] : $k['f_type'].'('.$k['f_val'].')' ) : '-' ?></td>
 					<td><?=$k['memo']?></td>
 					<td><a href='./rule_list.php?storageKey=<?=$storageKey?>&ruleKey=<?=$v?>'>Image list</a></td>
 					</tr>

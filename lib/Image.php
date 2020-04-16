@@ -58,7 +58,7 @@ class Image
 		self::$tokenUrl = $setting['version'] . 'authorization/' ;
 		$this -> countOvertime = FALSE ;
 		$url = self::$tokenUrl ;
-		$dat = self::getToken ( $url , 'GET' , 1 ) ;
+		$dat = self::callAPI ( $url , 'GET' , 1 ) ;
 		$array = json_decode ( $dat , true ) ;
 		$this -> token = $array['Token'] ;
 	}
@@ -71,7 +71,7 @@ class Image
 	 * @param string $dataUse
 	 * @return object return정보
 	 */
-	public function getToken ( $url , $way , $int , $dataUse = NULL )
+	public function callAPI ( $url , $way , $int , $dataUse = NULL )
 	{
 		$url = self::$apiDomain . $url ;
 		$curl = curl_init () ;
@@ -112,7 +112,7 @@ class Image
 	{
 		$url = self::$folderUrl ;
 		$url .= $folder_key ;
-		$dat = self::getToken ( $url , 'GET' , 2 ) ;
+		$dat = self::callAPI ( $url , 'GET' , 2 ) ;
 		$array = json_decode ( $dat , true ) ;
 		$r = array_push ( $array , $this -> token ) ;
 		return $this -> returnMsg ( $array , __FUNCTION__ ) ;
@@ -126,7 +126,7 @@ class Image
 	public function imageList ( $key ) // Image search
 	{
 		$urlUse = self::$imageUrl . '/list/' . $key ;
-		$dat = self::getToken ( $urlUse , 'GET' , 2 ) ;
+		$dat = self::callAPI ( $urlUse , 'GET' , 2 ) ;
 		$array = json_decode ( $dat , true ) ;
 		return $this -> returnMsg ( $array , __FUNCTION__ ) ;
 	}
@@ -139,20 +139,20 @@ class Image
 	public function imageDetail ( $ImageKey )
 	{
 		$urlUse = self::$imageUrl . '/detail/' . $ImageKey ;
-		$dat = self::getToken ( $urlUse , 'GET' , 2 ) ;
+		$dat = self::callAPI ( $urlUse , 'GET' , 2 ) ;
 		$array = json_decode ( $dat , true ) ;
 		return $this -> returnMsg ( $array , __FUNCTION__ ) ;
 	}
 
 	/**
 	 * imageDelete 이미지 삭제
-	 * @param string $ImageKeys
+	 * @param array $ImageKeys ( ["xxx","dddd"] )
 	 * @return
 	 */
-	public function imageDelete ( $ImageKeys )//$ ImageKeys is an array (["xxx","dddd"]).
+	public function imageDelete ( $ImageKeys )
 	{
 		$urlUse = self::$imageUrl . $ImageKeys ;
-		$dat = self::getToken ( $urlUse , 'DELETE' , 2 ) ;
+		$dat = self::callAPI ( $urlUse , 'DELETE' , 2 ) ;
 		$array = json_decode ( $dat , true ) ;
 		return $this -> returnMsg ( $array , __FUNCTION__ ) ;
 	}
@@ -165,7 +165,7 @@ class Image
 	public function ruleSelect ( $storageKey ) // Image search
 	{
 		$urlUse = self::$ruleUrl . $storageKey ;
-		$dat = self::getToken ( $urlUse , 'GET' , 2 ) ;
+		$dat = self::callAPI ( $urlUse , 'GET' , 2 ) ;
 		$array = json_decode ( $dat , true ) ;
 		return $this -> returnMsg ( $array , __FUNCTION__ ) ;
 	}

@@ -31,7 +31,7 @@ SDK를 사용하면 편리하고 안전하게 API 연결을 할수있다.
 
 **Class**에서 아래와 같이 **Method**를 포함하여 호출해서 사용할수 있다.
 
-* `getToken ()` -> Token 신청. ( `/inc/image.inc` 설정필요 )
+* `callAPI ()` -> API 요청. ( `/inc/image.inc` 설정필요 )
 * `folderSelect ( $folder_key )` -> 폴더 목록 검색.
 * `imageList ( $key )` -> 이미지 리스트 검색.
 * `imageDetail ( $ImageKey )` -> 이미지 상세 검색.

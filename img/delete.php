@@ -26,13 +26,8 @@ if ( empty ( $deleteArray ) )
  */
 $re = $Image ->  imageDelete ( json_encode ( $deleteArray ) ) ;
 if ( $re )
-	if ( isset ( $re -> Error ) )
-		echo $re -> RequestID . ' : ' . $re -> Message ;
-	else if ( isset ( $re -> Result ) )
-		echo $re -> Result ;
-	else
-		echo 'Image delete error' ;
+	echo $re['Result'] ? $re['Result'] : 'Image delete error.' ;
 else
-	echo 'Images delete error' ;
+	echo 'Images delete error!' ;
 exit ;
 ?>
